@@ -2080,7 +2080,7 @@ void do_mstat( CHAR_DATA* ch, const char* argument)
       {
          pager_printf_color( ch, "&RNuisance   &cStage: (&R%d&c/%d)  Power:  &w%d  &cTime:  &w%s.\r\n",
                              victim->pcdata->nuisance->flags, MAX_NUISANCE_STAGE, victim->pcdata->nuisance->power,
-                             ctime( &victim->pcdata->nuisance->set_time ) );
+                             ctime( (time_t* )&victim->pcdata->nuisance->set_time ) );
       }
    }
    if( victim->morph )
